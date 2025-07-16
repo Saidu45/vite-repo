@@ -1,13 +1,224 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #111827, #000000);
+  color: #ffffff;
 }
 
-nav button {
+.app-container {
+  min-height: 100vh;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 50;
+}
+
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links button {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
+  color: #ffffff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav-links button:hover {
+  color: #facc15;
+}
+
+.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('https://images.unsplash.com/photo-1542825993-1a65f4301f07') no-repeat center center/cover;
+  text-align: center;
+}
+
+.home-content {
+  max-width: 600px;
+}
+
+.home-content h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.home-content p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.primary-button {
+  background: #facc15;
+  color: #000000;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.primary-button:hover {
+  background: #eab308;
+}
+
+.about,
+.tour {
+  min-height: 100vh;
+  padding: 4rem 1rem;
+}
+
+.music,
+.contact {
+  min-height: 100vh;
+  padding: 4rem 1rem;
+  background: #1f2937;
+}
+
+.section-container {
+  max-width: 1152px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-container h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.about .section-container p {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  max-width: 896px;
+  margin: 0 auto;
+}
+
+.music-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: #111827;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s;
+}
+
+.tour-dates {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tour-dates .card .primary-button {
+  margin-top: 0.5rem;
+}
+
+.contact .section-container p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-links a {
+  font-size: 1.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #facc15;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .home-content p {
+    font-size: 1rem;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    height: auto;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .music-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 769px) {
+  .home-content h1 {
+    font-size: 4.5rem;
+  }
+
+  .home-content p {
+    font-size: 1.5rem;
+  }
+
+  .music-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
